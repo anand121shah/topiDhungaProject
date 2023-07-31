@@ -1,15 +1,43 @@
-# topiDhungaProject
-CapstoneBDS2023
 
-Agenada
-1. Time-Series Analysis: For analyzing the historical equipment performance data, including sensor readings and failure records, time-series analysis techniques can be used. Time-series algorithms can help identify patterns, trends, and seasonality in the data. Techniques like ARIMA (AutoRegressive Integrated Moving Average) or seasonal decomposition of time series (STL) could be beneficial in understanding equipment behavior over time.
+# Anomaly Detection in Sensor Data
 
-2. Classification: To predict whether a piece of equipment is likely to fail or not, classification algorithms can be employed. Some popular classification algorithms include Random Forest, Support Vector Machines (SVM), and Gradient Boosting Machines (GBM). These algorithms can learn from historical data and classify equipment instances into failure or non-failure categories.
+This repository contains the files for a project on anomaly detection in sensor data.
 
-3. Regression: If you need to predict the remaining useful life or the time until the equipment is likely to fail, regression algorithms can be used. Linear regression, Decision Trees, and Neural Networks are some of the common regression algorithms that can predict continuous values.
+## Files in this repository
 
-4. Anomaly Detection: Anomaly detection techniques can be useful in identifying abnormal behavior in the equipment's sensor readings or other variables. Isolation Forest or One-Class SVM are examples of algorithms that can help detect unusual patterns.
+- `dataFolder.zip`: This zip file contains the sensor data used in this project.
 
-5. Feature Engineering: Feature engineering is an essential part of the project, and it involves creating meaningful features from the raw data. Techniques like Principal Component Analysis (PCA), t-distributed Stochastic Neighbor Embedding (t-SNE), or other domain-specific techniques can help with dimensionality reduction and feature extraction.
+- `anomaly_detection.ipynb`: This Jupyter notebook contains the steps performed for data preprocessing, anomaly detection using the Isolation Forest model, and feature engineering using PCA. It also includes the steps for saving and loading the models.
 
-6. Ensemble Methods: Combining multiple models can often improve prediction accuracy and robustness. Ensemble methods such as Random Forest or Gradient Boosting can be used to combine the predictions from multiple base models.
+- `model_testing.ipynb`: This Jupyter notebook contains the steps for loading the saved models and using them to predict anomalies in new sensor data.
+
+- `isolation_forest_model.pkl`: This file is the trained Isolation Forest model.
+
+- `standard_scaler.pkl`: This file is the Standard Scaler used to standardize the features.
+
+- `pca.pkl`: This file is the PCA object used for dimensionality reduction.
+
+## Usage
+
+First, unzip `dataFolder.zip` to get the sensor data.
+
+The `anomaly_detection.ipynb` notebook includes the steps for loading and preprocessing the data, training the Isolation Forest model, and applying PCA.
+
+The `model_testing.ipynb` notebook includes the steps for loading the saved models and using them to predict anomalies in new sensor data. You can replace the example new data in this notebook with your own data.
+
+You can load the saved models in Python using the joblib library:
+
+```python
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.ensemble import IsolationForest
+import joblib
+
+# Load the models
+model = joblib.load('isolation_forest_model.pkl')
+scaler = joblib.load('standard_scaler.pkl')
+pca = joblib.load('pca.pkl')
+```
+
+The `model` object is the trained Isolation Forest model, which can be used to predict anomalies in new data. The `scaler` object is used to standardize the features, and the `pca` object is used to apply PCA to the data.
+
