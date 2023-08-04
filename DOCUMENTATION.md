@@ -97,11 +97,3 @@ The notebooks can be run in environments such as Jupyter Notebook, JupyterLab, o
 ## Summary
 
 This project provides a framework for anomaly detection in sensor data. The trained models can be used to detect anomalous sensor readings and apply dimensionality reduction to new data. The provided Jupyter notebooks provide detailed instructions on how to use the models.
-
-## Contributions
-
-Contributions to improve the models or the preprocessing steps are welcome. Please open an issue to discuss the changes you would like to make, or submit a pull request.
-
-## License
-
-The project is open-source and available under the MIT License. See the `LICENSE` file for more details.
