@@ -17,6 +17,3 @@ In this example, an autoencoder is trained to detect anomalies on the ECG5000 da
 
 ---
 
-### Citation
-
-"Intro to Autoencoders." TensorFlow. [Online]. Available: [TensorFlow.org](https://www.tensorflow.org/tutorials/generative/autoencoder). Accessed on [Date of Access].
